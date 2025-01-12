@@ -9,8 +9,10 @@ namespace My_Portfolio.DAL.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=IŞ\\SQLEXPRESS;initial Catalog=MyPortfolioDb;integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=IŞ\\SQLEXPRESS;initial Catalog=MyPortfolioDb;integrated Security=true; TrustServerCertificate=True;");
         }
+        //TrustServerCertificate:update-database yaparken -> sertifika hatasını önler.
+
 
         //Entityleri Sql'e yansıtma. 
         public DbSet<About> Abouts { get; set; }
@@ -19,6 +21,7 @@ namespace My_Portfolio.DAL.Context
         public DbSet<Feature> Features { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Portfolio> Portfolios  { get; set; }
+        public DbSet<Skill> Skills  { get; set; }
         public DbSet<SocialMedia> SocialMedias  { get; set; }
         public DbSet<Testimonial> Testimonials   { get; set; }
 
